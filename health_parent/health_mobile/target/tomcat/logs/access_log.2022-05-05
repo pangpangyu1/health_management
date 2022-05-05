@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:18 +0800] "GET / HTTP/1.1" 304 - http-bio-80-exec-1 37
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:19 +0800] "GET /pages/m_setmeal.html HTTP/1.1" 304 - http-bio-80-exec-3 2
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:19 +0800] "GET /css/page-health-order.css HTTP/1.1" 304 - http-bio-80-exec-4 2
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:40 +0800] "GET /pages/setmeal_detail_1.html HTTP/1.1" 200 10008 http-bio-80-exec-6 5
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:42 +0800] "GET /pages/orderInfo.html?id=1 HTTP/1.1" 304 - http-bio-80-exec-8 2
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:43 +0800] "POST /setmeal/findById.do?id=1 HTTP/1.1" 200 5419 http-bio-80-exec-9 263
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:57 +0800] "POST /order/submit.do HTTP/1.1" 200 47 http-bio-80-exec-1 64
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:57 +0800] "GET /pages/orderSuccess.html?orderId=4 HTTP/1.1" 200 4495 http-bio-80-exec-1 2
+0:0:0:0:0:0:0:1 - - [05/May/2022:14:56:57 +0800] "POST /order/findById.do?id=4 HTTP/1.1" 200 160 http-bio-80-exec-1 10

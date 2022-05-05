@@ -1,0 +1,17 @@
+com\pangpangyu\dao\OrderSettingDao.class
+com\pangpangyu\service\impl\SetmealServiceImpl.class
+com\pangpangyu\service\impl\MemberServiceImpl.class
+com\pangpangyu\dao\UserDao.class
+com\pangpangyu\dao\SetmealDao.class
+com\pangpangyu\service\impl\CheckGroupServiceImpl.class
+com\pangpangyu\dao\CheckGroupDao.class
+com\pangpangyu\dao\RoleDao.class
+com\pangpangyu\dao\MemberDao.class
+com\pangpangyu\service\impl\CheckItemServiceImpl.class
+com\pangpangyu\dao\OrderDao.class
+com\pangpangyu\service\impl\UserServiceImpl.class
+com\pangpangyu\service\impl\ReportServiceImpl.class
+com\pangpangyu\dao\CheckItemDao.class
+com\pangpangyu\dao\PermissionDao.class
+com\pangpangyu\service\impl\OrderServiceImpl.class
+com\pangpangyu\service\impl\OrderSettingServiceImpl.class

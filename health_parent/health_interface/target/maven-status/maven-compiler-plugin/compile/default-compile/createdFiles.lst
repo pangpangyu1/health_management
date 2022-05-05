@@ -1,0 +1,8 @@
+com\pangpangyu\service\SetmealService.class
+com\pangpangyu\service\UserService.class
+com\pangpangyu\service\MemberService.class
+com\pangpangyu\service\CheckGroupService.class
+com\pangpangyu\service\OrderService.class
+com\pangpangyu\service\ReportService.class
+com\pangpangyu\service\CheckItemService.class
+com\pangpangyu\service\OrderSettingService.class
