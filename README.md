@@ -40,6 +40,8 @@ health_mobile：移动端前台，打包方式为war，作为Dubbo服务消费�
 
 ### 表关系
 
+![image-20220816222318572.png](https://s2.loli.net/2022/08/16/xLug32RKAPpyiwZ.png)
+
 - checkGroup-checkItem 一对多
 - setmeal-checkGroup 一对多
 
