@@ -1,7 +1,12 @@
 package com.pangpangyu.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.pangpangyu.dao.MemberDao;
+import com.pangpangyu.dao.OrderDao;
+import com.pangpangyu.entity.PageResult;
+import com.pangpangyu.entity.QueryPageBean;
 import com.pangpangyu.pojo.Member;
 import com.pangpangyu.service.MemberService;
 import com.pangpangyu.utils.MD5Utils;
@@ -19,6 +24,8 @@ import java.util.List;
 public class MemberServiceImpl implements MemberService {
     @Autowired
     private MemberDao memberDao;
+    @Autowired
+    private OrderDao orderDao;
 
     public Member findByTelephone(String telephone) {
         return memberDao.findByTelephone(telephone);
@@ -36,7 +43,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     //根据月份查询会员数量
-    public List<Integer> findMemberCountByMonths(List<String> months) {//2018.05
+    public List<Integer> findMemberCountByMonths(List<String> months) {
         List<Integer> memberCount = new ArrayList<>();
         String date = null;
         for (String month : months) {
@@ -45,5 +52,40 @@ public class MemberServiceImpl implements MemberService {
             memberCount.add(count);
         }
         return memberCount;
+    }
+
+
+    public PageResult pageQuery(QueryPageBean queryPageBean) {
+        Integer currentPage = queryPageBean.getCurrentPage();
+        Integer pageSize = queryPageBean.getPageSize();
+        String queryString = queryPageBean.getQueryString();
+        //完成分页查询是基于mybatis框架提供的分页助手插件完成
+        PageHelper.startPage(currentPage, pageSize);
+        Page<Member> page = memberDao.selectByCondition(queryString);
+        long total = page.getTotal();
+        List<Member> rows = page.getResult();
+        return new PageResult(total, rows);
+    }
+
+
+    public void deleteById(Integer id) {
+        orderDao.deleteByMemberId(id);
+        memberDao.deleteById(id);
+    }
+
+
+    public void edit(Member checkItem) {
+        System.out.println(checkItem);
+        memberDao.edit(checkItem);
+    }
+
+
+    public Member findById(Integer id) {
+        return memberDao.findById(id);
+    }
+
+
+    public List<Member> findAll() {
+        return memberDao.findAll();
     }
 }

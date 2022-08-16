@@ -1,5 +1,7 @@
 package com.pangpangyu.dao;
 
+import com.github.pagehelper.Page;
+import com.pangpangyu.pojo.Member;
 import com.pangpangyu.pojo.Order;
 
 import java.util.List;
@@ -14,5 +16,13 @@ public interface OrderDao {
     public List<Map> findHotSetmeal();
     public void add(Order order);
     public List<Order> findByCondition(Order order);
+
+    void deleteByMemberId(Integer id);
+
+    Page<Order> selectByCondition(String queryString);
+
+    void deleteById(Integer id);
+
+    void edit(Order checkItem);
 }
 

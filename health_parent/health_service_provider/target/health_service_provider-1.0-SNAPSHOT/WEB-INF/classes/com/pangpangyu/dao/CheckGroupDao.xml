@@ -13,11 +13,11 @@
         <result column="remark" property="remark"/>
         <result column="attention" property="attention"/>
     </resultMap>
-    <resultMap type="com.pangpangyu.pojo.CheckGroup" id="findByIdResultMap" extends="baseResultMap">
-        <collection property="checkItems" javaType="ArrayList" ofType="com.pangpangyu.pojo.CheckItem"
-                    column="id" select="com.pangpangyu.dao.CheckItemDao.findCheckItemById">
-        </collection>
-    </resultMap>
+<!--    <resultMap type="com.pangpangyu.pojo.CheckGroup" id="findByIdResultMap" extends="baseResultMap">-->
+<!--        <collection property="checkItems" javaType="ArrayList" ofType="com.pangpangyu.pojo.CheckItem"-->
+<!--                    column="id" select="com.pangpangyu.dao.CheckItemDao.findCheckItemById">-->
+<!--        </collection>-->
+<!--    </resultMap>-->
 
     <insert id="add" parameterType="com.pangpangyu.pojo.CheckGroup">
         <!-- 通过Mybatis提供的selectKey标签获得自增产生的id值 -->

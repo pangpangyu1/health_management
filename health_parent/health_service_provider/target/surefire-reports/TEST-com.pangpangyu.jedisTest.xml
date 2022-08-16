@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.pangpangyu.jedisTest" time="0.126" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.pangpangyu.jedisTest" time="0.109" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2021.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -31,7 +31,7 @@
     <property name="maven.ext.class.path" value="D:\IntelliJ IDEA 2021.2\plugins\maven\lib\maven-event-listener.jar"/>
     <property name="classworlds.conf" value="D:\gongju\apache-maven-3.8.3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="GBK"/>
-    <property name="java.library.path" value="D:\JDK8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\CRT\;D:\VMware\VMware Workstation\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\JDK8\bin;D:\Mysql\bin;D:\gongju\apache-maven-3.8.3\bin;D:\gongju\nodejs\;D:\JDK8\jre\bin;D:\ROSE\common;D:\Python3\Scripts\;D:\Python3\;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;&quot;;%JAVA_HOME%\bin&quot;;C:\Users\余庚辰\AppData\Roaming\npm;E:\QQ游戏\QQGameTempest\Hall.57768\;."/>
+    <property name="java.library.path" value="D:\JDK8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\CRT\;D:\VMware\VMware Workstation\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\JDK8\bin;D:\Mysql\bin;D:\gongju\apache-maven-3.8.3\bin;D:\gongju\nodejs\;D:\JDK8\jre\bin;D:\ROSE\common;C:\Program Files\MySQL\MySQL Server 8.0\bin;D:\Python3\Scripts\;D:\Python3\;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;&quot;;%JAVA_HOME%\bin&quot;;C:\Users\余庚辰\AppData\Roaming\npm;E:\QQ游戏\QQGameTempest\Hall.57768\;."/>
     <property name="maven.conf" value="D:\gongju\apache-maven-3.8.3/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -64,5 +64,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.pangpangyu.jedisTest" name="diffTest" time="0.126"/>
+  <testcase classname="com.pangpangyu.jedisTest" name="diffTest" time="0.109"/>
 </testsuite>

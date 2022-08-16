@@ -18,6 +18,16 @@
         insert into t_order(member_id,orderDate,orderType,orderStatus,setmeal_id)
         values (#{memberId},#{orderDate},#{orderType},#{orderStatus},#{setmealId})
     </insert>
+    <update id="edit" parameterType="com.pangpangyu.pojo.Order">
+            update t_order set orderDate=#{orderDate}
+            where id=#{id}
+    </update>
+    <delete id="deleteByMemberId">
+        delete from t_order where member_id=#{id}
+    </delete>
+    <delete id="deleteById">
+        delete from t_order where id=#{id}
+    </delete>
 
     <!--动态条件查询-->
     <select id="findByCondition" parameterType="com.pangpangyu.pojo.Order" resultMap="baseResultMap">
@@ -80,5 +90,11 @@
           from t_order as o inner join t_setmeal as s on s.id = o.setmeal_id
           group by o.setmeal_id
           order by setmeal_count desc limit 0,4
+    </select>
+    <select id="selectByCondition" resultType="com.pangpangyu.pojo.Order">
+        select * from t_order
+        <if test="value != null and value.length > 0">
+            where id = #{value}
+        </if>
     </select>
 </mapper>

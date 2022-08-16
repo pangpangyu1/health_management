@@ -61,6 +61,7 @@ public class CheckItemController {
     }
 
     //修改
+    @PreAuthorize("hasAuthority('CHECKITEM_EDIT')")
     @RequestMapping("/edit")
     public Result edit(@RequestBody CheckItem checkItem){
         try {

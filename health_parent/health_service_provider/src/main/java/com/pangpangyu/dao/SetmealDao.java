@@ -26,4 +26,5 @@ public interface SetmealDao {
     public List<Setmeal> findAll();
 
     public List<Map<String, Object>> findSetmealCount();
+
 }

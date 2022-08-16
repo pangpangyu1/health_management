@@ -7,6 +7,7 @@ import com.pangpangyu.dao.CheckGroupDao;
 import com.pangpangyu.entity.PageResult;
 import com.pangpangyu.entity.QueryPageBean;
 import com.pangpangyu.pojo.CheckGroup;
+import com.pangpangyu.pojo.CheckItem;
 import com.pangpangyu.service.CheckGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,7 +49,9 @@ public class CheckGroupServiceImpl implements CheckGroupService {
     @Override
     public CheckGroup findById(Integer id) {
         return checkGroupDao.findById(id);
+
     }
+
 
     @Override
     public List<Integer> findCheckItemIdsByCheckGroupId(Integer id) {

@@ -15,11 +15,11 @@
         <result column="attention" property="attention"/>
         <result column="img" property="img"/>
     </resultMap>
-    <resultMap type="com.pangpangyu.pojo.Setmeal" id="findByIdResultMap" extends="baseResultMap">
-        <collection property="checkGroups" javaType="ArrayList" ofType="com.pangpangyu.pojo.CheckGroup"
-                    column="id" select="com.pangpangyu.dao.CheckGroupDao.findCheckGroupById">
-        </collection>
-    </resultMap>
+<!--    <resultMap type="com.pangpangyu.pojo.Setmeal" id="findByIdResultMap" extends="baseResultMap">-->
+<!--        <collection property="checkGroups" javaType="ArrayList" ofType="com.pangpangyu.pojo.CheckGroup"-->
+<!--                    column="id" select="com.pangpangyu.dao.CheckGroupDao.findCheckGroupById">-->
+<!--        </collection>-->
+<!--    </resultMap>-->
 
 
     <!--新增-->

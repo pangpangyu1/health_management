@@ -27,7 +27,7 @@
                     <li class="list-item">
                         <a class="link-page" href="setmeal_detail_${setmeal.id}.html">
                             <img class="img-object f-left"
-                                 src="http://ramz6cvn9.hd-bkt.clouddn.com/${setmeal.img}"
+                                 src="http://rgp2fhqjq.hn-bkt.clouddn.com/${setmeal.img}"
                                  alt="">
                             <div class="item-body">
                                 <h4 class="ellipsis item-title">${setmeal.name}</h4>

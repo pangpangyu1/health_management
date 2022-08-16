@@ -3,6 +3,8 @@ package com.pangpangyu.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.pangpangyu.constant.MessageConstant;
 import com.pangpangyu.constant.RedisMessageConstant;
+import com.pangpangyu.entity.PageResult;
+import com.pangpangyu.entity.QueryPageBean;
 import com.pangpangyu.entity.Result;
 import com.pangpangyu.pojo.Order;
 import com.pangpangyu.service.OrderService;
@@ -65,5 +67,12 @@ public class OrderController {
             e.printStackTrace();
             return new Result(false,MessageConstant.QUERY_ORDER_FAIL);
         }
+    }
+
+    //检查项分页查询
+    @RequestMapping("/findPage")
+    public PageResult findPage(@RequestBody QueryPageBean queryPageBean) {
+        PageResult pageResult = orderService.pageQuery(queryPageBean);
+        return pageResult;
     }
 }

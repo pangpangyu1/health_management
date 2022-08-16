@@ -1,10 +1,14 @@
 package com.pangpangyu.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.pangpangyu.constant.MessageConstant;
 import com.pangpangyu.dao.MemberDao;
 import com.pangpangyu.dao.OrderDao;
 import com.pangpangyu.dao.OrderSettingDao;
+import com.pangpangyu.entity.PageResult;
+import com.pangpangyu.entity.QueryPageBean;
 import com.pangpangyu.entity.Result;
 import com.pangpangyu.pojo.Member;
 import com.pangpangyu.pojo.Order;
@@ -98,4 +102,22 @@ public class OrderServiceImpl implements OrderService {
         }
         return map;
     }
+
+    @Override
+    public PageResult pageQuery(QueryPageBean queryPageBean) {
+        Integer currentPage = queryPageBean.getCurrentPage();
+        Integer pageSize = queryPageBean.getPageSize();
+        String queryString = queryPageBean.getQueryString();
+        //完成分页查询是基于mybatis框架提供的分页助手插件完成
+        PageHelper.startPage(currentPage, pageSize);
+        Page<Order> page = orderDao.selectByCondition(queryString);
+        long total = page.getTotal();
+        List<Order> rows = page.getResult();
+        return new PageResult(total, rows);
+    }
+
+    public void deleteById(Integer id) {
+        orderDao.deleteById(id);
+    }
+
 }

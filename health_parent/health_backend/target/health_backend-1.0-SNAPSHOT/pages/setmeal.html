@@ -403,7 +403,7 @@
                 //文件上传成功后的钩子，response为服务端返回的值，file为当前上传的文件封装成的js对象
                 handleAvatarSuccess(response, file) {
                     //为模型数据imageUrl赋值，用于页面图片预览
-                    this.imageUrl = 'http://ramz6cvn9.hd-bkt.clouddn.com/' + response.data;
+                    this.imageUrl = 'http://rgp2fhqjq.hn-bkt.clouddn.com/' + response.data;
                     this.$message({
                         message: response.message,
                         type: response.flag ? 'success' : 'error'
@@ -495,7 +495,7 @@
                             this.activeName='first';
                             //为模型数据赋值，通过VUE数据双向绑定进行信息的回显
                             this.formData = res.data.data;
-                            this.imageUrl = 'http://ramz6cvn9.hd-bkt.clouddn.com/' + res.data.data.img;
+                            this.imageUrl = 'http://rgp2fhqjq.hn-bkt.clouddn.com/' + res.data.data.img;
                             //发送ajax请求查询所有的检查项信息，用于检查项表格展示
                             axios.get("/checkgroup/findAll.do").then((res)=> {
                                 if(res.data.flag){

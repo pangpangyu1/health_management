@@ -10,7 +10,7 @@
     <select id="selectByCondition" parameterType="string" resultType="com.pangpangyu.pojo.Member">
         select * from t_member
         <if test="value != null and value.length > 0">
-            where fileNumber = #{value} or phoneNumber = #{value} or name = #{value}
+            where id = #{value} or phoneNumber = #{value} or name = #{value}
         </if>
     </select>
 
@@ -94,5 +94,8 @@
     <!--总会员数-->
     <select id="findMemberTotalCount" resultType="int">
         select count(id) from t_member
+    </select>
+    <select id="findBySetmealId" resultType="com.pangpangyu.pojo.Order">
+        select * from t_order where setmeal_id=#{id}
     </select>
 </mapper>

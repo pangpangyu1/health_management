@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.pangpangyu.dao.PermissionDao;
 import com.pangpangyu.dao.RoleDao;
 import com.pangpangyu.dao.UserDao;
+import com.pangpangyu.pojo.Member;
 import com.pangpangyu.pojo.Permission;
 import com.pangpangyu.pojo.Role;
 import com.pangpangyu.pojo.User;
@@ -41,5 +42,10 @@ public class UserServiceImpl implements UserService {
             user.setRoles(roles);
         }
         return user;
+    }
+
+    @Override
+    public void edit(User user) {
+        userDao.updatePassword(user);
     }
 }

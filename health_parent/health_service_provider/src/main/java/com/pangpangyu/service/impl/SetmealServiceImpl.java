@@ -4,12 +4,15 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.pangpangyu.constant.RedisConstant;
+import com.pangpangyu.dao.MemberDao;
 import com.pangpangyu.dao.SetmealDao;
 import com.pangpangyu.entity.PageResult;
 import com.pangpangyu.entity.QueryPageBean;
+import com.pangpangyu.pojo.CheckGroup;
+import com.pangpangyu.pojo.CheckItem;
+import com.pangpangyu.pojo.Order;
 import com.pangpangyu.pojo.Setmeal;
 import com.pangpangyu.service.SetmealService;
-import com.pangpangyu.utils.QiniuUtils;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +35,8 @@ public class SetmealServiceImpl implements SetmealService {
     private SetmealDao setmealDao;
     @Autowired
     private JedisPool jedisPool;
+    @Autowired
+    private MemberDao memberDao;
     @Autowired
     private FreeMarkerConfigurer freeMarkerConfigurer;
     @Value("${out_put_path}")//从属性文件读取输出目录的路径
@@ -157,6 +162,15 @@ public class SetmealServiceImpl implements SetmealService {
     public Setmeal findById(Integer id) {
         Setmeal setmeal = setmealDao.findById(id);
 //        System.out.println(setmeal.getImg()+"修改前");
+//        Setmeal byId = setmealDao.findById(1);
+//        List<CheckGroup> checkGroups = byId.getCheckGroups();
+//        for (CheckGroup checkGroup : checkGroups) {
+//            System.out.println(checkGroup.toString());
+//            List<CheckItem> checkItems = checkGroup.getCheckItems();
+//            for (CheckItem checkItem : checkItems) {
+//                System.out.println(checkItem.toString());
+//            }
+//        }
         remPic2Redis(setmeal.getImg());
         return setmeal;
     }
@@ -175,8 +189,19 @@ public class SetmealServiceImpl implements SetmealService {
 //        jedisPool.getResource().srem(RedisConstant.SETMEAL_PIC_DB_RESOURCES,setmeal.getImg());
         remPic2Redis(setmeal.getImg());
 //        QiniuUtils.deleteFileFromQiniu(setmeal.getImg());
-        //根据Id删除套餐
-        setmealDao.deleteById(id);
+        List<Order> orders = memberDao.findBySetmealId(id);
+        if(orders.size()>0){
+            throw new RuntimeException("该套餐使用中，无法删除");
+        }else{
+            //根据Id删除套餐
+            setmealDao.deleteById(id);
+            //准备模板文件中所需的数据
+            List<Setmeal> setmealList = setmealDao.findAll();
+            //生成套餐列表静态页面
+            generateMobileSetmealListHtml(setmealList);
+
+        }
+
     }
 
     @Override
